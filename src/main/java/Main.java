@@ -28,10 +28,11 @@ public class Main {
 
     //PURE or IMPURE
     public static Shell stuffShellWithPearls(Shell currentShell, int addNumber){
+        Shell tempShell = new Shell("freshwater");
+
         //get number of pearls in current shell
         int countPearls = currentShell.getNumPearls();
 
-        Shell tempShell = new Shell("freshwater");
         tempShell.setNumPearls(countPearls + addNumber);
 
         //if less than zero - update to 0
@@ -45,22 +46,25 @@ public class Main {
     //PURE or IMPURE
     public static void fillTank(Tank shopTank, Shell oyster1, Shell oyster2, Shell oyster3){
 
-        shopTank.addShell(oyster1);  //all update the object
-        shopTank.addShell(oyster2);  //all update the object
-        shopTank.addShell(oyster3);  //all update the object
+        shopTank.addShell(oyster1);
+        shopTank.addShell(oyster2);
+        shopTank.addShell(oyster3);
 
     }
 
     //PURE or IMPURE
     //pick a shell and return the number of pearls
     public static int pickAPearl(Tank shopTank, int luckyNumber) {
+        int numPearls = 0;
         Shell myOyster = shopTank.pickShell(luckyNumber);
 
         if(myOyster != null){
-            return myOyster.getNumPearls();
+            numPearls =  myOyster.getNumPearls();
         }
         else {
-            return 0;
+            numPearls = 0;
         }
+
+        return numPearls;
     }
 }

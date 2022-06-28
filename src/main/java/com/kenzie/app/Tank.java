@@ -9,21 +9,23 @@ public class Tank {
     private ArrayList<Shell> shellsInTank = new ArrayList<>();
 
     public void addShell(Shell currentShell){
-        shellsInTank.add(Shell);
+        shellsInTank.add(currentShell);
         this.numShells = shellsInTank.size();
     }
 
     public Shell pickShell(int number){
         //check if number is valid
-        if( (number >= 0) && (number <  shellsInTank.size())) {
-            Shell pickedShell = shellsInTank.get(number);
-            shellsInTank.remove(number);
+        Shell pickedShell;
 
+        if( (number >= 0) && (number <  shellsInTank.size())) {
+            pickedShell = shellsInTank.get(number);
+            shellsInTank.remove(number);
             this.numShells--;
-            return pickedShell;
         }
         else {
-            return null;
+            pickedShell = null;
         }
+
+        return pickedShell;
     }
 }
