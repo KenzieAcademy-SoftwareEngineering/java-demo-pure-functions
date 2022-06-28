@@ -1,3 +1,5 @@
+package com.kenzie.app;
+
 import java.util.Objects;
 
 public class Shell {
